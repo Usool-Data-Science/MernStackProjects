@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-ask-primary: #1c731c;
+  --color-ask-secondary: #21b921;
+  --default-font-family: "Inter", sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+}
