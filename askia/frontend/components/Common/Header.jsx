@@ -14,10 +14,10 @@ const Header = () => {
 
   return (
     <div className="bg-ask-primary">
-      <div className="container mx-auto flex justify-between items-center py-2 px-12">
+      <div className="container mx-auto flex justify-between items-center py-2 px-4 sm:px-8 lg:px-12">
         {/* Logo */}
         <div>
-          <img src="/askiaLogo.svg" className="w-12 h-8" alt="Askia" />
+          <img src="/icons/askiaLogo.svg" className="w-12 h-8" alt="Askia" />
         </div>
         {/* Navs on large screen sizes */}
         <nav className="hidden sm:flex gap-4 items-center justify-center">
@@ -42,7 +42,7 @@ const Header = () => {
           </button>
 
           <button className="rounded-lg flex space-x-1 px-2 py-1  backdrop-blur-xl border border-white/20">
-            <img src="/nijaIcon.svg" alt="9ja" />
+            <img src="/icons/nijaIcon.svg" alt="9ja" />
             <span className="text-white">English</span>
           </button>
           {/* Search Bar */}

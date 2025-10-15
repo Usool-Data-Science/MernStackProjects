@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Logo & Accreditation */}
           <div className="flex flex-col items-center lg:items-start gap-6 lg:w-1/3">
             <img
-              src="/askiaLogo.svg"
+              src="/icons/askiaLogo.svg"
               alt="ASKIA Logo"
               className="w-40 h-auto object-contain"
             />

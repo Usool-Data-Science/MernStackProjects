@@ -41,7 +41,7 @@ const Carousel = () => {
               key={index}
               src={item}
               alt={`Slide ${index + 1}`}
-              className="w-full object-cover flex-shrink-0"
+              className="w-full h-full object-cover flex-shrink-0"
             />
           ))}
         </div>
