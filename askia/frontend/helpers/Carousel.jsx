@@ -1,29 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const placeholder = [
+const dummyImages = [
   "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
   "https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp",
   "https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp",
   "https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp",
 ];
 
-const Carousel = ({ hasBodyNav, height, width }) => {
+const Carousel = ({
+  hasBodyNav,
+  images,
+  height,
+  width,
+  autoScroll = false,
+  interval = 3000,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselHeight = height ? `${height}px` : "100%";
   const carouselWidth = width ? `${width}px` : "100%";
+  const placeholder = images || dummyImages;
+
   const nextSlide = (e) => {
-    e.preventDefault();
+    e && e.preventDefault();
     setCurrentIndex((prev) => (prev + 1) % placeholder.length);
   };
 
   const prevSlide = (e) => {
-    e.preventDefault();
+    e && e.preventDefault();
     setCurrentIndex(
       (prev) => (prev - 1 + placeholder.length) % placeholder.length
     );
   };
 
   const goToSlide = (index) => setCurrentIndex(index);
+
+  // 🔁 Auto scroll logic
+  useEffect(() => {
+    if (!autoScroll || placeholder.length < 1) return;
+
+    const slideInterval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % placeholder.length);
+    }, interval);
+
+    return () => clearInterval(slideInterval);
+  }, [autoScroll, interval, placeholder.length]);
 
   return (
     <div className="w-full">
@@ -67,7 +87,7 @@ const Carousel = ({ hasBodyNav, height, width }) => {
         )}
       </div>
 
-      {/* Bottom Navigation (below the image) */}
+      {/* Bottom Navigation */}
       <div className="flex justify-center w-full py-4 gap-2">
         {placeholder.map((_, i) => (
           <button

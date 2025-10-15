@@ -51,3 +51,38 @@ export const faqs = [
       "You can visit our ‘Ingredients’ page to explore detailed information about each component used in our products and their health benefits.",
   },
 ];
+
+export const reviewsData = [
+  {
+    name: "John Doe",
+    country: "Nigeria",
+    rating: 3,
+    comment: "This is a fair product to buy",
+  },
+  {
+    name: "Sarah Malik",
+    country: "Kenya",
+    rating: 5,
+    comment: "Absolutely love this! Worth every penny!",
+  },
+  {
+    name: "Ahmed Khalid",
+    country: "UAE",
+    rating: 4,
+    comment: "Very good, I hope to get more of it in the future.",
+  },
+  {
+    name: "Jane Smith",
+    country: "USA",
+    rating: 5,
+    comment: "Amazing experience! Would definitely recommend.",
+  },
+];
+
+export const dummyCovid = Array.from({ length: 4 }, (_, i) => ({
+  name: "Benefit of Corn",
+  image: "images/LandingPage/covid.png",
+  description:
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel magnam unde ducimus, sit optio dolorem quo facere sunt harum reiciendis eligendi voluptates laboriosam accusamus inventore iste tempore temporibus obcaecati. Eius",
+  url: "https://www.google.com",
+}));

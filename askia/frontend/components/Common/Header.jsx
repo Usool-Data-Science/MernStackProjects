@@ -41,9 +41,9 @@ const Header = () => {
             </span>
           </button>
 
-          <button className="rounded-lg flex space-x-1 px-2 py-1  backdrop-blur-xl border border-white/20">
+          <button className="rounded-lg flex items-center justify-center space-x-1 p-1  backdrop-blur-xl border border-white/20">
             <img src="/icons/nijaIcon.svg" alt="9ja" />
-            <span className="text-white">English</span>
+            <span className="text-white text-sm">English</span>
           </button>
           {/* Search Bar */}
           <div>

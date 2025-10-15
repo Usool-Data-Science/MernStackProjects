@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import Carousel from "../../helpers/Carousel";
 import ProductCard from "../Products/ProductCard";
 import FAQSection from "../../helpers/FaqSection";
-import { faqs } from "../../helpers/data";
+import { dummyCovid, faqs, reviewsData } from "../../helpers/data";
+import ReviewCard from "../../helpers/ReviewCard";
+import WellbeingCard from "../../helpers/Wellbeing";
 
 const featuredProducts = [
   {
@@ -58,6 +60,7 @@ const productVerification = [
     image: "/images/LandingPage/sonVerification.png",
   },
 ];
+const whyAskImage = ["/images/LandingPage/greenGrass.png"];
 
 const Hero = () => {
   return (
@@ -185,7 +188,7 @@ const Hero = () => {
       </div>
 
       {/* Product verification */}
-      <div className="text-center py-8 px-8">
+      <div className="text-center bg-gray-100 py-8 px-8">
         <h2 className="font-bold text-2xl font-nunito text-ask-secondary italic tracking-wide">
           Premium & Verified Products
         </h2>
@@ -215,10 +218,114 @@ const Hero = () => {
         <h2 className="text-ask-secondary text-2xl font-nunito font-bold my-4">
           Why Askia Remedies
         </h2>
-        <Carousel height={200} hasBodyNav={true} />
+        <div className="relative">
+          <Carousel
+            autoScroll={true}
+            images={whyAskImage}
+            height={300}
+            hasBodyNav={true}
+          />
+          <div className="absolute z-0 flex flex-col items-center justify-center font-nunito inset-0">
+            <p className="text-md sm:text-2xl mb-8 font-bold text-white">
+              Pure, Organic Solutions
+            </p>
+            <p className="text-sm sm:text-xl text-white font-light">
+              Our products are crafted <br /> with natural,
+              <br className="hidden sm:block" /> organic ingredients to support
+              your health and wellness.
+            </p>
+            <div className="p-2 my-4">
+              <img
+                src="/icons/HeroSection/greenGrassIcon.svg"
+                alt="green grass icon"
+                className="w-12 h-12"
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <FAQSection faqs={faqs} />
+      <div className="bg-gray-100 my-4">
+        <FAQSection faqs={faqs} />
+      </div>
+
+      {/* Discount */}
+      <div className=" flex flex-col sm:flex-row py-4 px-16 my-4 justify-center items-center">
+        <div className="flex flex-col justify-center items-start sm:flex-2 text-ask-primary font-nunito">
+          <p className="font-black text-md mb-2 sm:text-xl tracking-wide ">
+            Get 20% off
+          </p>
+          <p className="text-sm">On your first order from our website</p>
+        </div>
+        <button className="w-full mx-8 py-1 px-4 sm:flex-1 bg-ask-primary text-white rounded-xl">
+          Claim your offer
+        </button>
+      </div>
+
+      {/* Review Section */}
+      <div className="bg-gray-100 my-10 py-4">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl font-nunito font-black text-ask-primary dark:text-white">
+            What the cured are saying
+          </h2>
+          <h3 className="mt-2 text-lg text-black font-nunito dark:text-gray-300">
+            Over <span className="font-black">10,000</span> people cured by our
+            products
+          </h3>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-50">
+          <ReviewCard reviews={reviewsData} />
+        </div>
+      </div>
+
+      {/* Secret of wellbeing */}
+      <div className="my-10 py-4">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl font-nunito font-black text-ask-primary dark:text-white">
+            Unlock the secrets of wellbeing
+          </h2>
+          <h3 className="mt-2 text-lg text-black font-nunito dark:text-gray-300">
+            Your guide to a healthier and happier life
+          </h3>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-50">
+          {dummyCovid.map((cov, index) => (
+            <WellbeingCard key={index} data={cov} />
+          ))}
+        </div>
+      </div>
+
+      {/* Daily Health & Wellness advice */}
+      <div className="my-10 py-4">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-nunito font-black text-ask-primary dark:text-white">
+            Daily Health & Wellness Advice
+          </h2>
+          <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-sm sm:text-base">
+            Stay informed and motivated with daily wellness insights, helpful
+            tips, and expert advice to keep you healthy and inspired.
+          </p>
+        </div>
+
+        {/* Local Video Section */}
+        <div className="bg-gray-50 p-6 rounded-xl shadow-sm my-8 mx-4 sm:mx-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-neutral-700">
+              <video
+                className="w-full h-full object-cover"
+                src="/videos/health-tips.mp4"
+                controls
+                poster="/images/LandingPage/wellnessAdvice.png"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p className="text-center text-gray-500 dark:text-gray-400 text-sm mt-3">
+              Watch our latest wellness advice video
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

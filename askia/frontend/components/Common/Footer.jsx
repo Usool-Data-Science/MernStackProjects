@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   const logo = [
-    { name: "nafdac", url: "/nafdacLogo.svg" },
-    { name: "nafdac", url: "/nafdacLogo.svg" },
-    { name: "nafdac", url: "/nafdacLogo.svg" },
-    { name: "son", url: "/sonLogo.png" },
+    { name: "nafdac", url: "/icons/nafdacLogo.svg" },
+    { name: "nafdac", url: "/icons/nafdacLogo.svg" },
+    { name: "nafdac", url: "/icons/nafdacLogo.svg" },
+    { name: "son", url: "/icons/sonLogo.png" },
   ];
   const accreditations = ["NAFDAC APPROVED", "SON APPROVED", "NAFDAC APPROVED"];
   const [subscriptionEmail, setSubscriptionEmail] = useState("");
