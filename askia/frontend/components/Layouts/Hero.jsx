@@ -273,7 +273,7 @@ const Hero = () => {
             products
           </h3>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-50">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 bg-gray-50">
           <ReviewCard reviews={reviewsData} />
         </div>
       </div>
@@ -288,7 +288,7 @@ const Hero = () => {
             Your guide to a healthier and happier life
           </h3>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-50">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 bg-gray-50">
           {dummyCovid.map((cov, index) => (
             <WellbeingCard key={index} data={cov} />
           ))}
