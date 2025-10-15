@@ -7,9 +7,10 @@ const placeholder = [
   "https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp",
 ];
 
-const Carousel = () => {
+const Carousel = ({ hasBodyNav, height, width }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const carouselHeight = height ? `${height}px` : "100%";
+  const carouselWidth = width ? `${width}px` : "100%";
   const nextSlide = (e) => {
     e.preventDefault();
     setCurrentIndex((prev) => (prev + 1) % placeholder.length);
@@ -41,24 +42,29 @@ const Carousel = () => {
               key={index}
               src={item}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover flex-shrink-0"
+              className="object-cover flex-shrink-0"
+              style={{ width: `${carouselWidth}`, height: `${carouselHeight}` }}
             />
           ))}
         </div>
 
         {/* Prev / Next Buttons */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 btn btn-circle"
-        >
-          ❮
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 btn btn-circle"
-        >
-          ❯
-        </button>
+        {hasBodyNav && (
+          <div>
+            <button
+              onClick={prevSlide}
+              className="absolute bg-ask-secondary border-none text-white text-xl left-4 top-1/2 transform -translate-y-1/2 btn btn-circle"
+            >
+              ❮
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute bg-ask-secondary border-none text-white text-xl right-4 top-1/2 transform -translate-y-1/2 btn btn-circle"
+            >
+              ❯
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Bottom Navigation (below the image) */}

@@ -3,6 +3,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Carousel from "../../helpers/Carousel";
 import ProductCard from "../Products/ProductCard";
+import FAQSection from "../../helpers/FaqSection";
+import { faqs } from "../../helpers/data";
 
 const featuredProducts = [
   {
@@ -183,7 +185,7 @@ const Hero = () => {
       </div>
 
       {/* Product verification */}
-      <div className="text-center py-8 px-8 bg-amber-100">
+      <div className="text-center py-8 px-8">
         <h2 className="font-bold text-2xl font-nunito text-ask-secondary italic tracking-wide">
           Premium & Verified Products
         </h2>
@@ -207,6 +209,16 @@ const Hero = () => {
           ))}
         </div>
       </div>
+
+      {/* Why Askia Remedies */}
+      <div className="my-8 mx-8 sm:mx-16 lg:mx-42 h-auto min-h-[100px]  text-center">
+        <h2 className="text-ask-secondary text-2xl font-nunito font-bold my-4">
+          Why Askia Remedies
+        </h2>
+        <Carousel height={200} hasBodyNav={true} />
+      </div>
+
+      <FAQSection faqs={faqs} />
     </section>
   );
 };
