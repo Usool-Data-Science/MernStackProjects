@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-ask-primary">
+    <div className="fixed top-0 left-0 w-full z-[100] bg-ask-primary">
       <div className="container mx-auto flex justify-between items-center py-2 px-4 sm:px-8 lg:px-12">
         {/* Logo */}
         <div>
@@ -42,7 +42,7 @@ const Header = () => {
           ))}
         </nav>
         {/* Cart, i8n and search */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 sm:space-x-4">
           {/* Cart */}
           <button className="relative" onClick={toggleIsCartDrawerOpen}>
             <FaShoppingCart className="h-6 w-6 text-white" />
@@ -51,9 +51,11 @@ const Header = () => {
             </span>
           </button>
           {/* Language Selector */}
-          <button className="rounded-lg flex items-center justify-center space-x-1 p-1  backdrop-blur-xl border border-white/20">
+          <button className="rounded-lg flex items-center justify-center space-x-1 p-1  backdrop-blur-xl sm:border sm:border-white/20">
             <img src="/icons/nijaIcon.svg" alt="9ja" />
-            <span className="text-white text-sm">English</span>
+            <span className="text-white text-sm hidden sm:inline-block">
+              English
+            </span>
           </button>
           {/* Search Bar */}
           <div>
