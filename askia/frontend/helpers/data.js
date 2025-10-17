@@ -80,9 +80,18 @@ export const reviewsData = [
 ];
 
 export const dummyCovid = Array.from({ length: 4 }, (_, i) => ({
-  name: "Benefit of Corn",
+  name: `Benefit of Corn ${i}`,
   image: "images/LandingPage/covid.png",
   description:
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel magnam unde ducimus, sit optio dolorem quo facere sunt harum reiciendis eligendi voluptates laboriosam accusamus inventore iste tempore temporibus obcaecati. Eius",
   url: "https://www.google.com",
+}));
+
+export const cartProducts = Array.from({ length: 10 }, (_, i) => ({
+  productId: i + 1,
+  name: `product ${i + 1}`,
+  size: ["S", "M", "L", "XL", "XXL"][i % 5],
+  quantity: Math.floor(Math.random() * 3) + 1,
+  price: 15 + i * 2,
+  image: `https://picsum.photos/200?random=${i + 1}`,
 }));

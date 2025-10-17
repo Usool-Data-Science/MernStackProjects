@@ -66,7 +66,7 @@ const Hero = () => {
   return (
     <section>
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row gap-4 py-4">
+        <div className="flex flex-col md:flex-row gap-4 py-4 px-2">
           {/* Left side texts*/}
           <div className="flex gap-8 p-8 justify-center items-center flex-2">
             {/* Rooted */}
